@@ -1,14 +1,12 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
 const TodoForm = (props) => {
 
-  const [item, setItem] = useState({
-
-  })
+  const [item, setItem] = useState({})
 
   const handleInputChange = e => {
     setItem({ ...item, [e.target.name]: e.target.value });
