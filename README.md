@@ -1,3 +1,15 @@
+# Links
+
+[Deployed link](https://bz-todo.netlify.app/)
+
+[PR link](https://github.com/bahazghayar/todo/pull/1)
+
+
+# UML
+
+![phase4](./public/todoPhaseOne.png)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
