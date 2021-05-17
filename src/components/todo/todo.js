@@ -19,7 +19,7 @@ const ToDo = () => {
   useEffect(_getTodoItems, [_getTodoItems]);
 
   useEffect(() => {
-    document.title = "To DO- complete: " + list.filter((item) => !item.complete).length + "/" + "Incomplete: " + list.filter((item) => item.complete).length;
+    document.title = `To Do List: ${list.filter(item => !item.complete).length}`;
   });
 
   return (
