@@ -2,12 +2,12 @@
 
 [Deployed link](https://bz-todo.netlify.app/)
 
-[PR link](https://github.com/bahazghayar/todo/pull/2)
+[PR link](https://github.com/bahazghayar/todo/pull/3)
 
 
 # UML
 
-![phase4](./public/todoPhaseOne.png)
+![phase2](./public/todoPhaseTwo.png)
 
 
 # Getting Started with Create React App
