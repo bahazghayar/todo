@@ -31,7 +31,7 @@ const Pagination = ({ totalitems }) => {
                 </li>
 
                 <li>
-                    <a onClick={pgNum.length != pagination.currentPage ? () => pagination.paginate(pagination.currentPage++) : () => pagination.paginate(pagination.currentPage)} className='page-link'>
+                    <a onClick={pgNum.length !== pagination.currentPage ? () => pagination.paginate(pagination.currentPage++) : () => pagination.paginate(pagination.currentPage)} className='page-link'>
                         Next
                     </a>
                 </li>
