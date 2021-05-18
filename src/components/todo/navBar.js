@@ -5,8 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 const NavBar = () => {
     return (
         <Navbar bg="primary" variant="dark">
-        <Navbar.Brand href="#home">Home</Navbar.Brand>
-        {/* <Navbar.Brand style={{ paddingLeft: '1rem' }}>Home</Navbar.Brand> */}
+            <Navbar.Brand href="#home">Home</Navbar.Brand>
         </Navbar>
     );
 };
