@@ -12,9 +12,13 @@ const TodoList = (props) => {
   return (
     <ListGroup>
       {pagination.current.map(item => (
-        <Toast action className={`complete-${item.complete.toString()}`} key={item._id} onClose={() => props.handleDelete(item._id)}>
+        <Toast action className={`complete-${item.complete.toString()}`} key={item._id} onClose={() => {
+          props.handleDelete(item._id, 'delete');
+        }}>
           <Toast.Header>
-            <Badge pill variant={item.complete ? "danger" : "success"} onClick={() => props.handleComplete(item._id)}>{item.complete ? "Complete" : "Pending..."}</Badge>{" "}
+            <Badge pill variant={item.complete ? "danger" : "success"} onClick={() => {
+							props.handleComplete(item._id, 'put');
+						}}>{item.complete ? "Complete" : "Pending..."}</Badge>{" "}
             <strong className="mr-auto" style={{ marginLeft: '20px' }}>{item.assignee}</strong>
           </Toast.Header>
           <Toast.Body >
