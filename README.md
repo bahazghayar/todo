@@ -2,7 +2,7 @@
 
 [Deployed link](https://bz-todo.netlify.app/)
 
-[PR link](https://github.com/bahazghayar/todo/pull/4)
+[PR link](https://github.com/bahazghayar/todo/pull/5)
 
 
 # UML
