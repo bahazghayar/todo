@@ -1,6 +1,7 @@
-import { useEffect } from 'react';
+import { useEffect , useState } from 'react';
 import TodoForm from './form.js';
 import TodoList from './list.js';
+import useAjax from '../../hooks/useAjax.js';
 
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
@@ -8,7 +9,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 
-import useAjax from '../../hooks/useAjax.js';
 
 import Pagination from './pagination.js'
 import PaginationContext from '../context/pagination-context.js'
@@ -16,10 +16,12 @@ import ChangeNumberOfPages from './itemperpage.js'
 
 import './todo.scss';
 
-const ToDo = () => {
-  const [list, _addItem, _toggleComplete, _getTodoItems, _deleteTask] = useAjax();
+const todoAPI = 'https://api-js401.herokuapp.com/api/v1/todo';
 
-  useEffect(_getTodoItems, [_getTodoItems]);
+const ToDo = () => {
+  const [list, fetchingData] = useAjax(todoAPI);
+
+  useEffect(fetchingData, [fetchingData]);
 
   useEffect(() => {
     document.title = `To Do List: ${list.filter(item => !item.complete).length}`;
@@ -37,7 +39,7 @@ const ToDo = () => {
             <Card style={{ width: "18rem" }}>
               <Card.Body>
                 <Card.Text>
-                  <TodoForm handleSubmit={_addItem} />
+                  <TodoForm handleSubmit={fetchingData} />
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -46,7 +48,7 @@ const ToDo = () => {
 
             <Col md={{ span: 5, offset: 2 }} className="list-item">
               <ChangeNumberOfPages />
-              <TodoList list={list} handleComplete={_toggleComplete} handleDelete={_deleteTask} />
+              <TodoList list={list} handleComplete={fetchingData} handleDelete={fetchingData} />
               <Pagination totalitems={list.length} />
             </Col>
 
